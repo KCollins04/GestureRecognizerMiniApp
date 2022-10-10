@@ -20,19 +20,29 @@
                                 <rect key="frame" x="38" y="313" width="338" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bacon" translatesAutoresizingMaskIntoConstraints="NO" id="R2K-0V-lHi">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bacon" translatesAutoresizingMaskIntoConstraints="NO" id="R2K-0V-lHi">
                                 <rect key="frame" x="114" y="64" width="146" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wnE-bV-Ms9" appends="YES" id="pOe-kp-G3I"/>
+                                </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waffle" translatesAutoresizingMaskIntoConstraints="NO" id="5Pl-Fn-4Ag">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="waffle" translatesAutoresizingMaskIntoConstraints="NO" id="5Pl-Fn-4Ag">
                                 <rect key="frame" x="268" y="44" width="146" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="8L0-rr-PuZ" appends="YES" id="MCs-j6-J0C"/>
+                                </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="egg" translatesAutoresizingMaskIntoConstraints="NO" id="Kv8-rx-yOg">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="egg" translatesAutoresizingMaskIntoConstraints="NO" id="Kv8-rx-yOg">
                                 <rect key="frame" x="0.0" y="79" width="105" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EEy-Z2-R2q" appends="YES" id="XRc-OA-M0x"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -40,12 +50,10 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="6F6-yw-nPB" appends="YES" id="CGs-A1-php"/>
-                            <outletCollection property="gestureRecognizers" destination="c13-Sc-bbd" appends="YES" id="hCF-3H-bB9"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="imageBacon" destination="R2K-0V-lHi" id="tw5-Fw-xRg"/>
-                        <outlet property="imageEgg" destination="Kv8-rx-yOg" id="Pwg-1P-QTD"/>
                         <outlet property="imagePlate" destination="Iwg-fE-qY1" id="5PK-J4-26C"/>
                         <outlet property="imageWaffle" destination="5Pl-Fn-4Ag" id="JOF-2g-bSw"/>
                     </connections>
@@ -56,9 +64,19 @@
                         <action selector="actionTapGesture:" destination="BYZ-38-t0r" id="zae-1q-agS"/>
                     </connections>
                 </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="c13-Sc-bbd">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="EEy-Z2-R2q">
                     <connections>
-                        <action selector="panView:" destination="BYZ-38-t0r" id="Bo5-JX-iue"/>
+                        <action selector="panEgg:" destination="BYZ-38-t0r" id="5vZ-Xf-scG"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="wnE-bV-Ms9">
+                    <connections>
+                        <action selector="panBacon:" destination="BYZ-38-t0r" id="6QZ-lL-PpJ"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="8L0-rr-PuZ">
+                    <connections>
+                        <action selector="panWaffle:" destination="BYZ-38-t0r" id="YUU-Qv-faN"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

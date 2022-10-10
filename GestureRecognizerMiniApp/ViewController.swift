@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imageWaffle: UIImageView!
     @IBOutlet weak var imageBacon: UIImageView!
-    @IBOutlet weak var imageEgg: UIImageView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +29,49 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func panView(_ sender: UIPanGestureRecognizer) {
-        let panLoc = sender.location(in: view)
-    sender.center = panLoc
-     
+    @IBAction func panEgg(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in:view)
+        
+        guard let gestureView = sender.view else{
+            return
+        }
+        gestureView.center = CGPoint(
+            x: gestureView.center.x + translation.x,
+            y: gestureView.center.y + translation.y
+        )
+        
+        sender.setTranslation(.zero, in: view)
     }
+    
+    
+    @IBAction func panBacon(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in:view)
+        
+        guard let gestureView = sender.view else{
+            return
+        }
+        gestureView.center = CGPoint(
+            x: gestureView.center.x + translation.x,
+            y: gestureView.center.y + translation.y
+        )
+        
+        sender.setTranslation(.zero, in: view)
+    }
+    
+    @IBAction func panWaffle(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in:view)
+        
+        guard let gestureView = sender.view else{
+            return
+        }
+        gestureView.center = CGPoint(
+            x: gestureView.center.x + translation.x,
+            y: gestureView.center.y + translation.y
+        )
+        
+        sender.setTranslation(.zero, in: view)
+    }
+    
     
     
 }
